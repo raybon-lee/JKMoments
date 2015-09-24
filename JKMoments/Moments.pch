@@ -1,0 +1,35 @@
+//
+//  Moments.pch
+//  JKMoments
+//
+//  Created by bingjie-macbookpro on 15/9/24.
+//  Copyright © 2015年 Bingjie. All rights reserved.
+//
+
+#ifndef Moments_pch
+#define Moments_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+/** DEBUG LOG **/
+#ifdef DEBUG
+#define DLog( s, ... ) NSLog( @"<%@:(%d)>: %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define DLog( s, ... )
+#endif
+
+#define SCREEN_BOUNDS   [UIScreen mainScreen].bounds
+#define SCREEN_WIDTH    ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT   ([UIScreen mainScreen].bounds.size.height)
+
+#define RGB_COLOR(r, g, b)       [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+
+#define __DEVICE_OS_VERSION_7_0 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+
+#import "NSString+Additions.h"
+#import "UIView+Additions.h"
+#import "UIImageView+WebCache.h"
+
+
+#endif /* Moments_pch */
